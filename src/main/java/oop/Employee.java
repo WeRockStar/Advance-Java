@@ -2,6 +2,7 @@ package oop;
 
 
 import java.time.LocalDate;
+import java.util.EnumMap;
 
 public abstract class Employee {
 
@@ -46,11 +47,14 @@ public abstract class Employee {
                 id, name, hirDate);
     }
 
-    public LocalDate getHirDate() {
-        return hirDate;
-    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
 
-    public void setHirDate(LocalDate hirDate) {
-        this.hirDate = hirDate;
+        Employee employee = (Employee) o;
+        if (id != null ? !id.equals(employee.name) : employee.id != null) return false;
+        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
+        return hirDate != null ? hirDate.equals(employee.hirDate) : employee.hirDate == null;
     }
 }

@@ -6,8 +6,7 @@ public class Salaried extends Employee {
 
     private double salary = DEFAULT_SALARY;
 
-    public Salaried() {
-    }
+    public Salaried() {}
 
     public Salaried(String name) {
         this(name, DEFAULT_SALARY);
